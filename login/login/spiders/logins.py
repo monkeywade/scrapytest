@@ -4,7 +4,7 @@ import scrapy
 class LoginsSpider(scrapy.Spider):
     name = 'logins'
     allowed_domains = ['b.edu.51cto.com']
-    start_urls = ['http://b.edu.51cto.com/unicom/course/index']
+    start_urls = ['http://b.edu.51cto.com']
 
 
     def parse(self, response):
