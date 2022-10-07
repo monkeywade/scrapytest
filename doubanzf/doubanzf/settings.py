@@ -33,17 +33,17 @@ ROBOTSTXT_OBEY = False
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
-  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-   'Accept-Encoding': 'gzip, deflate',
-    'Referer': 'https://www.douban.com/',
-   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3730.400 QQBrowser/10.5.3805.400',
+'Accept-Language': 'zh-CN,zh;q=0.9',
+'Cookie': 'll="118282"; bid=tf0ws8R1hR8; __utmz=30149280.1661431546.1.1.utmcsr=baidu|utmccn=(organic)|utmcmd=organic; __gads=ID=82bf2419131d26fd-224f045cd0d500da:T=1661431547:RT=1661431547:S=ALNI_MaLpNF9n7Ku-7vuZrx5cIM7PWraWA; __yadk_uid=3ZBJzhqPowZd4gaZdnFFD549MGUYPc37; __utmc=30149280; __gpi=UID=00000907c0515d18:T=1661431547:RT=1665107772:S=ALNI_MY1PATcfyXR7g4_w5Kn_cKTyYapVQ; ct=y; dbcl2="202797008:uVkbaGSektk"; ck=Gqix; push_noty_num=0; push_doumail_num=0; __utmv=30149280.20279; frodotk_db="e1f9fdc4fede5edca5edf94efc9b1c94"; _pk_ses.100001.8cb4=*; __utma=30149280.1851959539.1661431546.1665107768.1665117388.3; __utmt=1; _pk_id.100001.8cb4=a23f7e9f239730da.1665107767.2.1665117803.1665115346.; __utmb=30149280.28.5.1665117803828',
+'Host': 'www.douban.com',
+'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36 Core/1.94.169.400 QQBrowser/11.0.5130.400'
 }
 
 # Enable or disable spider middlewares

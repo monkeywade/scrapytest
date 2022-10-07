@@ -7,20 +7,21 @@
 from scrapy.exceptions import DropItem
 import re
 
+
 class DoubanzfPipeline(object):
     def __init__(self):
         self.book_set = set()
 
     def process_item(self, item, spider):
         # return item
-        address = '情侣不限|一房一厅|一号线|深大|香蜜湖|上沙|下沙|沙尾|石厦'
+        retain_content = '两房一厅|三房|2室1厅|2号线|二号线|一号线|1号线|2室2厅|2房2厅'
+        drop_content = '合租|一室一厅|一房|限女|限男|招租|次卧|主卧|1室1厅|楼梯房'
         for content in item['content']:
-            if re.search(address, content):
-                print("right")
-                return item
-            elif re.search('限女生', content):
-                print("not found")
+            print(content)
+            if re.search(drop_content, content):
                 raise DropItem("Drop content found: %s" % item)
+            elif re.search(retain_content, content):
+                return item
 
 # import pymysql.cursors
 #

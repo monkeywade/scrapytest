@@ -3,13 +3,15 @@ import scrapy
 from doubanzf.items import DoubanzfItem
 from scrapy.linkextractors import LinkExtractor
 
+
 class ZufangSpider(scrapy.Spider):
     name = 'zufang'
     allowed_domains = ['www.douban.com']
     start_urls = []
-    for i in range(0, 500, 25):
-        start_urls.append('https://www.douban.com/group/nanshanzufang/discussion?start=%s' % i)
-        # start_urls.append('https://www.douban.com/group/futianzufang/discussion?start=%s' % i)
+
+    for i in range(0, 250, 25):
+        # start_urls.append('https://www.douban.com/group/nanshanzufang/discussion?start=%s' % i)
+        start_urls.append('https://www.douban.com/group/futianzufang/discussion?start=%s&type=new' % i)
         # start_urls.append('https://www.douban.com/group/586502/discussion?start=%s'%i)
 
     def parse(self, response):
@@ -24,8 +26,10 @@ class ZufangSpider(scrapy.Spider):
 
         book['topic'] = response.xpath('//div[@id="content"]/h1/text()').extract_first()
         book['author'] = contents.xpath('./h3/span/a/text()').extract_first()
-        book['release_time'] = contents.xpath('./h3/span[@class="color-green"]/text()').extract_first()
+        book['release_time'] = contents.xpath('./h3/span[@class="create-time color-green"]/text()').extract_first()
         book['url'] = response.url
-        book['content'] = contents.xpath('.//div[@class="topic-richtext"]//text()').extract()
+        book['content'] = contents.xpath('.//div[@class="rich-content topic-richtext"]//text()').extract()
         # print(book)
         yield book
+
+
